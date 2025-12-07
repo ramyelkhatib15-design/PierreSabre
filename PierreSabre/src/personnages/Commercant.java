@@ -1,8 +1,8 @@
 package personnages;
 
 public class Commercant extends Huamins {
-	public Commercant(String nom , String boisson,int argent) {
-		super(nom, boisson, argent);
+	public Commercant(String nom ,int argent) {
+		super(nom, "the", argent);
 	}
 	
 	public int se_faire_extorquer() {

@@ -4,6 +4,8 @@ public class Huamins {
 	protected String nom;
 	protected String boisson_favorite;
 	protected int argent ;
+	protected Huamins memoire[] = new Huamins[30];
+	protected int nombre_de_connaisannce =0;
 	
 	public Huamins(String nom , String boisson, int argent) {
 		this.argent = argent;
@@ -39,12 +41,44 @@ public class Huamins {
 			parler("je n ai plus que "+ argent+ "sous en poche je ne peux pas  m ofrrir un" +bien+"a "+prix);
 		}
 	}
-	private void gagner_argent(int gain) {
+	protected  void gagner_argent(int gain) {
 		argent = argent + gain;
 		
 	}
-	private void perdre_argent(int perte) {
+	protected void perdre_argent(int perte) {
 		argent = argent - perte;
+	}
+	public void Faireconnaissance(Huamins humain) {
+		bonjour();
+		humain.repondre(this);
+		memorieser(humain);
+		
+	}
+	private void memorieser(Huamins humain) {
+		if (nombre_de_connaisannce< 30) {
+			memoire[nombre_de_connaisannce] = humain;
+			nombre_de_connaisannce++;	
+		}
+		
+		
+		
+	}
+	private void repondre(Huamins humain) {
+		bonjour();
+		memorieser(humain);
+		
+	}
+	public void listerConnaissance() {
+		
+		System.out.print("Je connais beaucoup de monde dont: ");
+		for (Huamins huamins : memoire) {
+			if (huamins != null) {
+				System.out.print(huamins.getNom() + " ");
+				
+			}	
+		}
+		System.out.println();
+		
 	}
 	
 	

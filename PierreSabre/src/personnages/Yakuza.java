@@ -7,6 +7,13 @@ public class Yakuza extends Huamins{
 		super(nom, boisson, argent);
 		this.clan = clan;
 	}
+	@Override
+	public void bonjour() {
+		super.bonjour();
+		parler("Mon clan est celui de "+ clan);
+		
+		
+	}
 	public void extorquer(Commercant victime) {
 		parler(victime.getNom()+", si tu tiens à la vie donne moi ta bourse !");
 		int somme = victime.se_faire_extorquer();
